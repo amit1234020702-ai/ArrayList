@@ -1,0 +1,28 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> list = new ArrayList<>(
+                Arrays.asList(2, 7, 11, 15));
+
+        int target = 9;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < list.size(); i++) {
+
+            int complement = target - list.get(i);
+
+            if (map.containsKey(complement)) {
+                System.out.println("Indices: "
+                        + map.get(complement) + " " + i);
+                return;
+            }
+
+            map.put(list.get(i), i);
+        }
+
+        System.out.println("No Pair Found");
+    }
+}
