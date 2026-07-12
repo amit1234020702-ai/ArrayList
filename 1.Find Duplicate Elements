@@ -1,0 +1,20 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> list = new ArrayList<>(
+                Arrays.asList(10,20,10,30,40,20,50));
+
+        HashSet<Integer> seen = new HashSet<>();
+        HashSet<Integer> duplicate = new HashSet<>();
+
+        for(int num : list){
+            if(!seen.add(num)){
+                duplicate.add(num);
+            }
+        }
+
+        System.out.println(duplicate);
+    }
+}
